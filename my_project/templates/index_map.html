@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Remote Sensing Lab</title>
+<script type="text/javascript" src="{{ STATIC_URL }}geoexplorer/externals/ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}geoexplorer/externals/ext/ext-all.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}geoexplorer/externals/ext/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-3.4.0/examples/shared/examples.css" />
+<script type="text/javascript" src="{{ STATIC_URL }}geoexplorer/externals/openlayers/lib/OpenLayers.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}geoexplorer/externals/geoext/lib/GeoExt.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}geoexplorer/externals/geoext/resources/css/geoext-all-debug.css"></link>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}geoexplorer/externals/openlayers/theme/default/style.css" />
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&v=3.6" type="text/javascript"></script>
+
+<style type="text/css">
+         .controls_map_zoomtomapextent{
+	background-image: url('{{ PROJECT_ROOT }}static/img/arrow_out.png');
+        }
+        .controls_map_navigation{
+	background-image: url('{{ PROJECT_ROOT }}static/img/navigation.png');
+        }
+        .controls_map_zoombox{
+	background-image: url('{{ PROJECT_ROOT }}static/img/magnifier.png');
+        }
+        .controls_map_zoomin{
+	background-image: url('{{ PROJECT_ROOT }}static/img/magnifier_zoom_in.png');
+        }
+        .controls_map_zoomout{
+	background-image: url('{{ PROJECT_ROOT }}static/img/magnifier_zoom_out.png');
+        }
+        .controls_map_zoomtoprevious{
+	background-image: url('{{ PROJECT_ROOT }}static/img/arrow_left.png');
+        }
+        .controls_map_zoomtonext{
+	background-image: url('{{ PROJECT_ROOT }}static/img/arrow_right.png');
+        }
+        .controls_map_measureline{
+	background-image: url('{{ PROJECT_ROOT }}static/img/ruler.png');
+        }
+        .controls_map_measurearea{
+	background-image: url('{{ PROJECT_ROOT }}static/img/ruler_square.png');
+        }
+        .controls_map_drawpolygon{
+	background-image: url('{{ PROJECT_ROOT }}static/img/drawPolygon.png');
+        }
+        .controls_map_drawline{
+	background-image: url('{{ PROJECT_ROOT }}static/img/drawLine.png');
+        }
+        .controls_map_drawpoint{
+	background-image: url('{{ PROJECT_ROOT }}static/img/drawPoint.png');
+        }
+        .controls_map_editfeature{
+	background-image: url('{{ PROJECT_ROOT }}static/img/shape_square_edit.png');
+        }
+        .controls_map_vectordelete{
+	background-image: url('{{ PROJECT_ROOT }}static/img/shape_square_delete.gif');
+        }
+        
+        textarea {
+            display: block;
+            width: 100%;
+            height: 3em;
+        }
+        label {
+            display: block;
+        }
+        .notsupported {
+            color: red;
+        }
+        button {
+            display: block;
+            margin-top: 10px;
+        }
+       
+       #license {
+          position:absolute;
+          right:5px;
+          top:0px;
+          }
+      </style>
+
+<script src="{{ PROJECT_ROOT }}static/js/app_client.js"></script>
+
+</head>
+
+<body>
+    <div id="title">
+        <h1>Remote Sensing Laboratory of the NTUA</h1>
+        <p id="license"> Powered by: <a href="http://geonode.org">GeoNode</a> | <a href="https://www.gnu.org/copyleft/gpl.html">GNU License</a></p>
+        
+    </div>
+       <div id="desc">
+            <p>This is a project that allows you to explore the Earth, using vector and raster data. You can display and analyze satellite images, that have been processed with Remote Sensing techniques.
+               Also, you can modify vector data using GIS techniques like buffer, intersection, union etc.</p>
+            <b>Note: </b>For the WPS processing you have to choose the "WPS processing" layer clicking the (+) sign on the right side of the map.</p>
+            <select id="processes"><option>Select a WPS  process</option></select>
+            <p id="abstract"></p>
+            <div id="input"></div>
+            <div id="output"></div>
+   </div>
+ </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
